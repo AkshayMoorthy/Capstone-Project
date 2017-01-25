@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "854608977620",
+    "firebase_url": "https://dawn2dusk-1290e.firebaseio.com",
+    "project_id": "dawn2dusk-1290e",
+    "storage_bucket": "dawn2dusk-1290e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854608977620:android:e30d036ae139897d",
+        "android_client_info": {
+          "package_name": "app.com.dawn2dusk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854608977620-vfmd865i8ti3k4m57u1mrloknlk4bmrc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.com.dawn2dusk",
+            "certificate_hash": "823A02DB923500080CA08A6F8D8833C48018CC5E"
+          }
+        },
+        {
+          "client_id": "854608977620-g993f816b7mc561d59jau4je2vuocsdb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuDthWAiAorcTTob0ZSE72q84J-xoloZI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854608977620-g993f816b7mc561d59jau4je2vuocsdb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

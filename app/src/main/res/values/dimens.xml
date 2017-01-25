@@ -1,0 +1,29 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="button_height">64dp</dimen>
+    <dimen name="image_height">200dp</dimen>
+    <dimen name="image_width">200dp</dimen>
+    <dimen name="image_size">300dp</dimen>
+    <dimen name="data">14dp</dimen>
+    <dimen name="titlesize">16dp</dimen>
+    <dimen name="logotext_size">32dp</dimen>
+    <!-- Today Widget -->
+    <dimen name="widget_today_default_width">240dp</dimen>
+    <dimen name="widget_today_default_height">60dp</dimen>
+    <dimen name="widget_today_min_resize_width">40dp</dimen>
+    <dimen name="widget_today_min_resize_height">@dimen/widget_today_default_height</dimen>
+    <dimen name="widget_today_large_width">220dp</dimen>
+    <dimen name="data_text_size">32dp</dimen>
+
+    <!-- This is an odd width, but we're trying to match the font closely to keep things working
+         on devices that don't yet have Roboto -->
+    <dimen name="data_text_width">49dp</dimen>
+    <dimen name="data_space">8dp</dimen>
+
+</resources>
