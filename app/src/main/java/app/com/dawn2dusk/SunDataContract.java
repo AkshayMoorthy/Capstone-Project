@@ -17,24 +17,25 @@ public class SunDataContract {
 
     // Construct the Base Content Uri
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
-    public static final class SunDataEntry implements BaseColumns{
+
+    public static final class SunDataEntry implements BaseColumns {
 
         public static final Uri CONTENT_URI = BASE_CONTENT_URI.buildUpon().appendPath(PATH).build();
 
         public static final String CONTENT_ITEM_TYPE =
                 ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH;
 
-        public static final String TABLE_NAME="sundata";
-        public static final String COLUMN_SUNDATA_ID="sundata_id";
-        public static final String COLUMN_SUNRISE="sunrise";
-        public static final String COLUMN_SUNSET="sunset";
-        public static final String COLUMN_DAY_LENGTH="day_length";
-        public static final String COLUMN_DATE="date";
-        public static final String COLUMN_LAT="lat";
-        public static final String COLUMN_LNG="lng";
-        public static final String COLUMN_ADR="adr";
+        public static final String TABLE_NAME = "sundata";
+        public static final String COLUMN_SUNDATA_ID = "sundata_id";
+        public static final String COLUMN_SUNRISE = "sunrise";
+        public static final String COLUMN_SUNSET = "sunset";
+        public static final String COLUMN_DAY_LENGTH = "day_length";
+        public static final String COLUMN_DATE = "date";
+        public static final String COLUMN_LAT = "lat";
+        public static final String COLUMN_LNG = "lng";
+        public static final String COLUMN_ADR = "adr";
         // Define projection for Version table
-        public static final String[] PROJECTION = new String[] {
+        public static final String[] PROJECTION = new String[]{
                 /*0*/ SunDataEntry.COLUMN_SUNDATA_ID,
                 /*1*/ SunDataEntry.COLUMN_SUNRISE,
                 /*2*/ SunDataEntry.COLUMN_SUNSET,
@@ -44,6 +45,7 @@ public class SunDataContract {
                 /*6*/SunDataEntry.COLUMN_LNG,
                 /*7*/SunDataEntry.COLUMN_ADR
         };
+
         public static Uri buildSundataUri(long id) {
             return ContentUris.withAppendedId(CONTENT_URI, id);
         }

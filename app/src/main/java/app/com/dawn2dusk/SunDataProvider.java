@@ -13,11 +13,11 @@ import android.support.annotation.Nullable;
  */
 
 public class SunDataProvider extends ContentProvider {
-    static final String SUNDATA_ID="sundata_id";
-    static final String SUNRISE="sunrise";
-    static final String SUNSET="sunset";
-    static final String DAY_LENGTH="day_length";
-    static final int sundata=100;
+    static final String SUNDATA_ID = "sundata_id";
+    static final String SUNRISE = "sunrise";
+    static final String SUNSET = "sunset";
+    static final String DAY_LENGTH = "day_length";
+    static final int sundata = 100;
     private static final UriMatcher sUriMatcher = createUriMatcher();
     private SunDataDbHelper mOpenHelper;
 
@@ -28,12 +28,12 @@ public class SunDataProvider extends ContentProvider {
         uriMatcher.addURI(authority, SunDataContract.PATH, sundata);
         return uriMatcher;
     }
+
     @Override
     public boolean onCreate() {
-        mOpenHelper=new SunDataDbHelper(getContext());
+        mOpenHelper = new SunDataDbHelper(getContext());
         return true;
     }
-
 
 
     @Nullable
@@ -51,6 +51,7 @@ public class SunDataProvider extends ContentProvider {
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
         }
     }
+
     @Nullable
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs,
@@ -78,6 +79,7 @@ public class SunDataProvider extends ContentProvider {
         retCursor.setNotificationUri(getContext().getContentResolver(), uri);
         return retCursor;
     }
+
     @Nullable
     @Override
     public Uri insert(Uri uri, ContentValues values) {
@@ -89,7 +91,7 @@ public class SunDataProvider extends ContentProvider {
             case sundata: {
 
                 long _id = db.insert(SunDataContract.SunDataEntry.TABLE_NAME, null, values);
-                if ( _id > 0 )
+                if (_id > 0)
                     returnUri = SunDataContract.SunDataEntry.buildSundataUri(_id);
                 else
                     throw new android.database.SQLException("Failed to insert row into " + uri);
@@ -109,7 +111,7 @@ public class SunDataProvider extends ContentProvider {
         final int match = sUriMatcher.match(uri);
         int rowsDeleted;
         // this makes delete all rows return the number of rows deleted
-        if ( null == selection ) selection = "1";
+        if (null == selection) selection = "1";
         switch (match) {
             case sundata:
                 rowsDeleted = db.delete(
@@ -127,21 +129,21 @@ public class SunDataProvider extends ContentProvider {
 
     @Override
     public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-            final SQLiteDatabase db = mOpenHelper.getWritableDatabase();
-            final int match = sUriMatcher.match(uri);
-            int rowsUpdated;
+        final SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+        final int match = sUriMatcher.match(uri);
+        int rowsUpdated;
 
-            switch (match) {
-                case sundata:
-                    rowsUpdated = db.update(SunDataContract.SunDataEntry.TABLE_NAME, values, selection,
-                            selectionArgs);
-                    break;
-                default:
-                    throw new UnsupportedOperationException("Unknown uri: " + uri);
-            }
-            if (rowsUpdated != 0) {
-                getContext().getContentResolver().notifyChange(uri, null);
-            }
-            return rowsUpdated;
+        switch (match) {
+            case sundata:
+                rowsUpdated = db.update(SunDataContract.SunDataEntry.TABLE_NAME, values, selection,
+                        selectionArgs);
+                break;
+            default:
+                throw new UnsupportedOperationException("Unknown uri: " + uri);
+        }
+        if (rowsUpdated != 0) {
+            getContext().getContentResolver().notifyChange(uri, null);
+        }
+        return rowsUpdated;
     }
 }

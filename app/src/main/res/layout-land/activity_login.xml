@@ -5,61 +5,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="app.com.dawn2dusk.LoginActivity">
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:gravity="center"
-      android:layout_above="@+id/btnlayout">
-  <LinearLayout
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:orientation="vertical"
-      android:layout_centerInParent="true">
-  <ImageView
-      android:layout_width="@dimen/image_width"
-      android:layout_height="@dimen/image_height"
-      android:contentDescription="@string/cd_logo"
-      android:scaleType="centerInside"
-      android:src="@drawable/dawn2dusk"/>
+
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-  <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:textSize="@dimen/logotext_size"
-      android:textColor="@color/lc1"
-      android:text="@string/ls1"/>
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:textSize="@dimen/logotext_size"
-          android:textColor="@color/lc2"
-          android:text="@string/ls2"/>
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:textSize="@dimen/logotext_size"
-          android:textColor="@color/lc3"
-          android:text="@string/ls3"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnlayout"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/image_width"
+                android:layout_height="@dimen/image_height"
+                android:contentDescription="@string/cd_logo"
+                android:scaleType="centerInside"
+                android:src="@drawable/dawn2dusk" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ls1"
+                    android:textColor="@color/lc1"
+                    android:textSize="@dimen/logotext_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ls2"
+                    android:textColor="@color/lc2"
+                    android:textSize="@dimen/logotext_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ls3"
+                    android:textColor="@color/lc3"
+                    android:textSize="@dimen/logotext_size" />
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
-  </LinearLayout>
-  </LinearLayout>
-  <LinearLayout
-      android:id="@+id/btnlayout"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="@color/colorPrimary"
-      android:layout_alignParentBottom="true"
-      android:layout_alignParentLeft="true"
-      android:layout_alignParentStart="true">
-  <com.google.android.gms.common.SignInButton
-      android:layout_width="match_parent"
-      android:padding="2dp"
-      android:id="@+id/googlebutton"
-      android:contentDescription="@string/cd_login"
-      android:layout_height="@dimen/button_height"></com.google.android.gms.common.SignInButton>
-  </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary">
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/googlebutton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:contentDescription="@string/cd_login"
+            android:padding="2dp"></com.google.android.gms.common.SignInButton>
+    </LinearLayout>
 </RelativeLayout>

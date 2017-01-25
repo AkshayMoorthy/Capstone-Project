@@ -26,26 +26,26 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
-private SignInButton mGoogleButton;
+    private static final String TAG = "Login Activity";
+    private static int RC_SIGN_IN = 1;
+    SharedPreferences myPrefs;
+    private SignInButton mGoogleButton;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private static int RC_SIGN_IN=1;
-    SharedPreferences myPrefs;
-    private static final String TAG="Login Activity";
     private GoogleApiClient mGoogleApiClient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         myPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        mGoogleButton=(SignInButton)findViewById(R.id.googlebutton);
-        mAuth=FirebaseAuth.getInstance();
-        mAuthListener=new FirebaseAuth.AuthStateListener() {
+        mGoogleButton = (SignInButton) findViewById(R.id.googlebutton);
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if(firebaseAuth.getCurrentUser()!=null)
-                {
-                    startActivity(new Intent(LoginActivity.this,HomeActivity.class));
+                if (firebaseAuth.getCurrentUser() != null) {
+                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                 }
             }
         };
@@ -55,12 +55,12 @@ private SignInButton mGoogleButton;
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
-        mGoogleApiClient=new GoogleApiClient.Builder(getApplicationContext()).enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener() {
+        mGoogleApiClient = new GoogleApiClient.Builder(getApplicationContext()).enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener() {
             @Override
             public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-                Toast.makeText(LoginActivity.this,"Error",Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Error", Toast.LENGTH_SHORT).show();
             }
-        }).addApi(Auth.GOOGLE_SIGN_IN_API,gso).build();
+        }).addApi(Auth.GOOGLE_SIGN_IN_API, gso).build();
         mGoogleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,6 +77,7 @@ private SignInButton mGoogleButton;
             }
         }
     }
+
     private void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);

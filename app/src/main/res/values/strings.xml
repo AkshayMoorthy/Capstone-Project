@@ -46,4 +46,21 @@
     <string name="cd_sunset">Sunset Icon</string>
     <string name="cd_dur">Day Length Icon</string>
     <string name="cd_cdate">Choose a date from calendar</string>
+    <string name="cd_nav_image">Profile Image</string>
+    <string name="cd_sunrise_icon">Sunrise Icon</string>
+    <string name="cd_sunset_icon">Sunset Icon</string>
+    <string name="cd_dur_icon">Day Length Icon</string>
+    <string name="logout">Logout</string>
+    <string name="header_name">Day Length Icon</string>andl
+    <string name="header_email">Day Length Icon</string>
+    <string name="no_loc">Enable Location Access &amp; Refresh</string>
+    <string name="no_ic">No Internet Connection!</string>
+    <string name="alert_title">Permission Denied</string>
+    <string name="alert_message">Dawn2Dusk needs location access permissions to find the exact Sun Data.</string>
+    <string name="alert_positive">Deny</string>
+    <string name="alert_negative">Try Again</string>
+    <string name="nw_discon">Disconnected. Please re-connect.</string>
+    <string name="nw_lost">Network lost. Please re-connect.</string>
+
+
 </resources>

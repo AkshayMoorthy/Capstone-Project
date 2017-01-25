@@ -3,7 +3,7 @@
     <color name="colorPrimary">#FF5722</color>
     <color name="colorPrimaryDark">#E64A19</color>
     <color name="colorAccent">#FF5722</color>
-<color name="lc1">#F7B239</color>
+    <color name="lc1">#F7B239</color>
     <color name="lc2">#000000</color>
     <color name="lc3">#F95428</color>
     <color name="activated">#E0E0E0</color>

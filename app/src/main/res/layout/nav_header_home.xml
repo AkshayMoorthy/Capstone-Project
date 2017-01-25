@@ -16,6 +16,7 @@
         android:id="@+id/profile_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/cd_nav_image"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:visibility="invisible"
         app:srcCompat="@android:drawable/sym_def_app_icon" />

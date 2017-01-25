@@ -26,28 +26,27 @@ public class TodayWidgetIntentService extends IntentService {
             SunDataContract.SunDataEntry.COLUMN_DAY_LENGTH
     };
     // these indices must match the projection
-    private static final int INDEX_SUNRISE= 0;
+    private static final int INDEX_SUNRISE = 0;
     private static final int INDEX_SUNSET = 1;
     private static final int INDEX_DAY_LENGTH = 2;
-
-    public TodayWidgetIntentService() {
-        super("TodayWidgetIntentService");
-    }
     int riseid = R.mipmap.ic_rice;
     int setid = R.mipmap.ic_set;
     int durid = R.mipmap.ic_dur;
     String description = "Sunrise";
     String maxTemp = "5:30am";
 
-    // Perform this loop procedure for each Today widget
+    public TodayWidgetIntentService() {
+        super("TodayWidgetIntentService");
+    }
 
+    // Perform this loop procedure for each Today widget
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        Log.d("WidgetIntnetService","-->");
-        AppWidgetManager appWidgetManager=AppWidgetManager.getInstance(this);
-        int[] appWidgetIds=appWidgetManager.getAppWidgetIds(new ComponentName(this,TodayWidgetProvider.class));
-        Cursor data=getContentResolver().query(SunDataContract.SunDataEntry.CONTENT_URI, WIDGET_COLUMNS,null,null,null);
+        Log.d("WidgetIntnetService", "-->");
+        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
+        int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(this, TodayWidgetProvider.class));
+        Cursor data = getContentResolver().query(SunDataContract.SunDataEntry.CONTENT_URI, WIDGET_COLUMNS, null, null, null);
         if (data == null) {
             return;
         }
@@ -57,7 +56,7 @@ public class TodayWidgetIntentService extends IntentService {
         }
         for (int appWidgetId : appWidgetIds) {
 
-             int layoutId = R.layout.widget_today_large;
+            int layoutId = R.layout.widget_today_large;
 
             RemoteViews views = new RemoteViews(getPackageName(), layoutId);
 
@@ -84,6 +83,7 @@ public class TodayWidgetIntentService extends IntentService {
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
     }
+
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
     private void setRemoteContentDescription(RemoteViews views, String description) {
         views.setContentDescription(R.id.widget_sunrise_icon, description);
